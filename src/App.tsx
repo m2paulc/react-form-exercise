@@ -1,9 +1,12 @@
+import BoxList from './components/BoxList';
+
 function App () {
 
   return (
     <>
       <div>
-        <h1>Form Exercise</h1>
+        <h1>Color Box Maker</h1>
+        <BoxList />
       </div>
     </>
   );
