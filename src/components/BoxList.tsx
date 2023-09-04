@@ -1,10 +1,16 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import NewBoxForm from './NewBoxForm';
 import Box from './Box';
 import { State } from '../types/State';
 
-export default class BoxList extends Component<Props, State[]> {
-  constructor(props) {
+// interface Props {
+//   addBox: () => void,
+//   removeBox: () => void,
+//   box: object;
+// }
+
+export default class BoxList extends Component<object, State, Element> {
+  constructor(props: object) {
     super(props);
     this.state = { boxes: [] };
     this.addBox = this.addBox.bind(this);
@@ -23,7 +29,7 @@ export default class BoxList extends Component<Props, State[]> {
     return (
       <div>
         <NewBoxForm addBox={ this.addBox } />
-        { this.state.boxes.map((box) => (
+        { this.state.boxes.map((box: State): Element => (
           < Box key={ box.id } box={ box } removeBox={ () => this.removeBox(box.id) } />
         )) }
       </div>
